@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 161225788}
   - component: {fileID: 161225787}
   - component: {fileID: 161225786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,6 +233,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9106538554158477741, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
   m_PrefabInstance: {fileID: 8938258553986880704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &224313370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224313365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af935ac89103b6b49a341a851aba1c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 1
+  previousGrounded: 1
+  height: 1.2
+  groundBuffer: 0.1
+  landingCooldown: 1
+  timer: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &271776696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1199,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9106538554158477741, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 224313370}
   m_SourcePrefab: {fileID: 100100000, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
