@@ -52,16 +52,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _BACKANIMSTYLE: 0
-    - _BackColorOffset: 1.74
-    - _BackColorStretch: -1.04
-    - _BackRotation: 62.08
-    - _BackScale: 8.09
-    - _BackgroundInMaskOpacity: -0.04
+    - _BackColorOffset: 1.97
+    - _BackColorStretch: -0.33
+    - _BackRotation: 45.88
+    - _BackScale: 50.4
+    - _BackgroundInMaskOpacity: 1
     - _ColorMask: 15
     - _Cutoff: 0.55
     - _GradRotation: -0.55
-    - _GradientInMaskOpacity: 1.78
-    - _GradientInMaskPos: -0.98
+    - _GradientInMaskOpacity: 4.03
+    - _GradientInMaskPos: -0.47
     - _GradientOffset: -0.16
     - _GradientOpacity: 0.84
     - _GradientStretch: 0.8
@@ -69,8 +69,8 @@ Material:
     - _MaskRotation: 10.3
     - _MaskRotationSpeed: 0.22
     - _MaskScale: 15.79
-    - _RotateGradientMask: 223.35
-    - _Smooth: 1.41
+    - _RotateGradientMask: 217.24
+    - _Smooth: 1.81
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -79,16 +79,16 @@ Material:
     - _UIMaskSoftnessX: 1
     - _UIMaskSoftnessY: 1
     m_Colors:
-    - _BackColor1: {r: 1, g: 0.2320754, b: 0.7756036, a: 1}
-    - _BackColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _BackColor1: {r: 0.7139754, g: 0, b: 1, a: 1}
+    - _BackColor2: {r: 0.5999999, g: 0.5999999, b: 0.5999999, a: 1}
     - _Back_MoveSpeed: {r: 0.34, g: 0.07, b: 0, a: 0}
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
-    - _GradientColor1: {r: 0.1137255, g: 0.4564796, b: 0.64705884, a: 1}
+    - _GradientColor1: {r: 0, g: 0.68403864, b: 1, a: 1}
     - _GradientColor2: {r: 1, g: 0.9358491, b: 0.26226407, a: 1}
     - _GradientColor3: {r: 0, g: 0.54042435, b: 1, a: 1}
     - _GradientColor4: {r: 1, g: 1, b: 1, a: 1}
     - _MaskColor1: {r: 1, g: 1, b: 1, a: 1}
-    - _MaskColor2: {r: 0.3610241, g: 0.645283, b: 0, a: 1}
-    - _MaskSpeed: {r: 0.05, g: 0.04, b: 0, a: 0}
+    - _MaskColor2: {r: 0.5924529, g: 0.5924529, b: 0.5924529, a: 1}
+    - _MaskSpeed: {r: 2.65, g: 0.04, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
