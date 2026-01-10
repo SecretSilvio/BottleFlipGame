@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m_UIBG Galaxy
+  m_Shader: {fileID: -6465566751694194690, guid: a209b3f017bc5ff42adc2be971e12c15, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _BACKANIMSTYLE_ROTATE
+  - _INVERTMASK
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BackTexture:
+        m_Texture: {fileID: 2800000, guid: d826fb61b31e9d745853232636ff33b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTexture:
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BACKANIMSTYLE: 1
+    - _BackColorOffset: 15.3
+    - _BackColorStretch: -28.74
+    - _BackRotation: 0.22
+    - _BackScale: 0.93
+    - _BackgroundInMaskOpacity: -2.25
+    - _ColorMask: 15
+    - _Cutoff: 0.55
+    - _GradRotation: 4.52
+    - _GradientInMaskOpacity: 0.39
+    - _GradientInMaskPos: 1.84
+    - _GradientOffset: -0.16
+    - _GradientOpacity: 0.84
+    - _GradientStretch: 0.8
+    - _INVERTMASK: 1
+    - _MaskRotation: 10.3
+    - _MaskRotationSpeed: 0.22
+    - _MaskScale: 15.79
+    - _RotateGradientMask: 3.9
+    - _Smooth: 1.81
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UIMaskSoftnessX: 1
+    - _UIMaskSoftnessY: 1
+    m_Colors:
+    - _BackColor1: {r: 0.81886786, g: 0.81886786, b: 0.81886786, a: 1}
+    - _BackColor2: {r: 0.5169811, g: 0.5169811, b: 0.5169811, a: 1}
+    - _Back_MoveSpeed: {r: 0.14, g: 0.14, b: 0, a: 0}
+    - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientColor1: {r: 0.327602, g: 0.17924517, b: 1, a: 1}
+    - _GradientColor2: {r: 1, g: 0.66619277, b: 0.26226407, a: 1}
+    - _GradientColor3: {r: 0, g: 0.67636776, b: 1, a: 1}
+    - _GradientColor4: {r: 1, g: 0.8584906, b: 0.8584906, a: 1}
+    - _MaskColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _MaskColor2: {r: 0.5924529, g: 0.5924529, b: 0.5924529, a: 1}
+    - _MaskSpeed: {r: 0.11, g: 0.04, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

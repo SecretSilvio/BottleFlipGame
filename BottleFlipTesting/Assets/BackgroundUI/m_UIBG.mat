@@ -12,7 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _BACKANIMSTYLE_SCROLL
+  - _BACKANIMSTYLE_ROTATE
   - _INVERTMASK
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTexture:
-        m_Texture: {fileID: 2800000, guid: 3317006cae402324f834e072bb8ddef6, type: 3}
+        m_Texture: {fileID: 2800000, guid: d826fb61b31e9d745853232636ff33b8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -51,9 +51,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BACKANIMSTYLE: 0
+    - _BACKANIMSTYLE: 1
     - _BackColorOffset: 1.97
-    - _BackColorStretch: -0.33
+    - _BackColorStretch: 3.13
     - _BackRotation: 45.88
     - _BackScale: 50.4
     - _BackgroundInMaskOpacity: 1
@@ -81,7 +81,7 @@ Material:
     m_Colors:
     - _BackColor1: {r: 0.7139754, g: 0, b: 1, a: 1}
     - _BackColor2: {r: 0.5999999, g: 0.5999999, b: 0.5999999, a: 1}
-    - _Back_MoveSpeed: {r: 0.34, g: 0.07, b: 0, a: 0}
+    - _Back_MoveSpeed: {r: 0.07, g: 0.07, b: 0, a: 0}
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
     - _GradientColor1: {r: 0, g: 0.68403864, b: 1, a: 1}
     - _GradientColor2: {r: 1, g: 0.9358491, b: 0.26226407, a: 1}
@@ -89,6 +89,6 @@ Material:
     - _GradientColor4: {r: 1, g: 1, b: 1, a: 1}
     - _MaskColor1: {r: 1, g: 1, b: 1, a: 1}
     - _MaskColor2: {r: 0.5924529, g: 0.5924529, b: 0.5924529, a: 1}
-    - _MaskSpeed: {r: 2.65, g: 0.04, b: 0, a: 0}
+    - _MaskSpeed: {r: 0.11, g: 0.04, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
