@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SuccessCheck : MonoBehaviour
 {
+    public int StreakCount = 0;
+
     private bool previousGrounded = true;
     public bool isGrounded { get; private set; } = true;
     public float height = 1.2f;
@@ -48,6 +50,7 @@ public class SuccessCheck : MonoBehaviour
             {
                 // landed on side, do not count as success
                 Debug.Log("Landed on Side!");
+                StreakCount = 0;
             }
             else
             {
@@ -102,6 +105,7 @@ public class SuccessCheck : MonoBehaviour
         landingSound.pitch = Random.Range(0.95f, 1.05f);
         landingSound.Play();
         }
+        StreakCount += 1;
         // Additional logic for success can be added here
         if (upright)
         {
@@ -118,6 +122,16 @@ public class SuccessCheck : MonoBehaviour
 
     public void Reset()
     {
+        if (isGrounded && !isGroundedCheck().onSide)
+        {
+            // reset called when upright, do nothing to streak
+        }
+        else
+        {
+            // reset streak if pressed mid throw or on side
+            StreakCount = 0;
+        }
+
         previousGrounded = true;
         isGrounded = true;
         timer = landingCooldown;
