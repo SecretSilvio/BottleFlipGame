@@ -28,6 +28,8 @@ public class ScreenDrawThrow3D : MonoBehaviour
     private float flickStartTime;
     private Rigidbody rb;
 
+    public AudioSource clickSound;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,6 +41,11 @@ public class ScreenDrawThrow3D : MonoBehaviour
         {
             flickStartPos = Input.mousePosition;
             flickStartTime = Time.time;
+
+            if (clickSound != null)
+            {
+            clickSound.Play();
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
