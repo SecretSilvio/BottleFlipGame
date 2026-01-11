@@ -5,7 +5,9 @@ public class ScreenDrawThrow3D : MonoBehaviour
     [Header("Flick Thresholds")]
     public float minFlickSpeed = 300f;      // pixels per second
     public float minFlickDistance = 60f;    // pixels
+    public float maxFlickDistance = 1000f;   // pixels
     public float maxFlickSpeed = 2000f;     // pixels per second
+    public int throwSteps = 10;
 
     [Header("Force Ranges")]
     public float minXForce = 1f;
@@ -13,6 +15,8 @@ public class ScreenDrawThrow3D : MonoBehaviour
 
     public float minYForce = 3f;
     public float maxYForce = 10f;
+
+    public float flatXMult = 1.2f;
 
     public float forwardForce = 5f;
 
@@ -44,23 +48,28 @@ public class ScreenDrawThrow3D : MonoBehaviour
 
             Vector2 flickDelta = flickEndPos - flickStartPos;
             float flickDistance = flickDelta.magnitude;
-            Vector2 flickVelocity = flickDelta / flickDuration;
-            float flickSpeed = flickVelocity.magnitude;
+            float flickSpeed = flickDistance / flickDuration;
 
             // Ignore accidental input
             if (flickSpeed < minFlickSpeed) return;
             if (flickDistance < minFlickDistance) return;
 
-            float t = Mathf.InverseLerp(minFlickSpeed, maxFlickSpeed, flickSpeed);
+            float normalizedFlick = Mathf.InverseLerp(minFlickSpeed, maxFlickSpeed, flickSpeed);
+            normalizedFlick = Mathf.Round(normalizedFlick * throwSteps) / throwSteps;
+            float normalizedDistance = Mathf.InverseLerp(minFlickDistance, maxFlickDistance, flickDistance);
+            normalizedDistance = Mathf.Round(normalizedDistance * throwSteps) / throwSteps;
 
-            Throw(flickDelta.normalized, t);
+            Throw(flickDelta.normalized, normalizedFlick, normalizedDistance);
+            Debug.Log("Flick type: " + normalizedFlick + " Distance type: " + normalizedDistance);
+            //Debug.Log("Flick Distance: " + flickDistance + " FlickDuration: " + flickDuration + " flickSpeed: " + flickSpeed + " t: " + t);
         }
     }
 
-    void Throw(Vector2 direction, float t)
+    // t is flick speed which gets turned into torque power, d is flick distance which gets turned into throw power
+    void Throw(Vector2 direction, float t, float d)
     {
-        float xForce = Mathf.Lerp(minXForce, maxXForce, t) * direction.x;
-        float yForce = Mathf.Lerp(minYForce, maxYForce, t) * direction.y;
+        float xForce = Mathf.Lerp(minXForce, maxXForce, d) * direction.x * flatXMult;
+        float yForce = Mathf.Lerp(minYForce, maxYForce, d) * direction.y;
 
         Vector3 force =
             Camera.main.transform.right * xForce +

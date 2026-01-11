@@ -50,7 +50,7 @@ Material:
     - _QueueOffset: -50
     - _Rim_Power: 2.52
     - _WobbleX: 0
-    - _WobbleZ: -0
+    - _WobbleZ: 0
     m_Colors:
     - _BottomColor: {r: 0, g: 0.55860996, b: 0.7283019, a: 1}
     - _FillAmount: {r: -0.000000031571837, g: 0.1987431, b: -0.000000059604645, a: 0}

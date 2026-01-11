@@ -271,11 +271,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFlickSpeed: 300
   minFlickDistance: 60
-  maxFlickSpeed: 2000
+  maxFlickSpeed: 8000
   minXForce: 0
   maxXForce: 4
   minYForce: 3
-  maxYForce: 15
+  maxYForce: 20
   forwardForce: 2
   minTorque: 1
   maxTorque: 4
