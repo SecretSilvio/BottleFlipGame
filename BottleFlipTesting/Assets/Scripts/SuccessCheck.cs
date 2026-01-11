@@ -11,6 +11,9 @@ public class SuccessCheck : MonoBehaviour
     public ParticleSystem uprightStarPS;
     public ParticleSystem upsidedownStarPS;
 
+    public AudioSource landingSound;
+
+ 
     // Update is called once per frame
     void Update()
     {
@@ -77,6 +80,11 @@ public class SuccessCheck : MonoBehaviour
 
     public void OnSuccess(bool upright)
     {
+        if (landingSound != null)
+        {
+        landingSound.pitch = Random.Range(0.95f, 1.05f);
+        landingSound.Play();
+        }
         // Additional logic for success can be added here
         if (upright)
         {
