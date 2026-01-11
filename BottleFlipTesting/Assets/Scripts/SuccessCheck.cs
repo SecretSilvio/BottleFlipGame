@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class SuccessCheck : MonoBehaviour
 {
-    public bool previousGrounded = true;
-    public float height;
+    private bool previousGrounded = true;
+    public bool isGrounded { get; private set; } = true;
+    public float height = 1.2f;
+    public float width = 0.5f;
     public float groundBuffer = 0.1f;
     public float landingCooldown = 1f;
     public float timer = 0f;
@@ -26,54 +28,69 @@ public class SuccessCheck : MonoBehaviour
 
         // check if grounded now
         var groundedCheck = isGroundedCheck();
+        isGrounded = groundedCheck.isgrounded;
         // if previously grounded and still grounded, do nothing
-        if (groundedCheck.isGrounded && groundedCheck.isGrounded == previousGrounded)
+        if (isGrounded && isGrounded == previousGrounded)
         {
-            previousGrounded = groundedCheck.isGrounded;
-            return;
+            // do nothing
         }
         // if previously grounded and now not grounded, it means you have just lifted off
-        else if (!groundedCheck.isGrounded && groundedCheck.isGrounded != previousGrounded)
+        else if (!isGrounded && isGrounded != previousGrounded)
         {
-            previousGrounded = groundedCheck.isGrounded;
-            return;
+            // lifted off
         }
         // if previously not grounded and now grounded, it means you have just landed, start the landing cooldown to not land multiple times and set a flag that you won
         // NEED DEBUG TO NOT PLAY WIN WHEN RESETTING BOTTLE
-        else if (groundedCheck.isGrounded && groundedCheck.isGrounded != previousGrounded)
+        else if (isGrounded && isGrounded != previousGrounded)
         {
-            previousGrounded = groundedCheck.isGrounded;
             timer = landingCooldown;
-            // you win!
-            GameEvents.OnFlipSuccess?.Invoke();
-            OnSuccess(groundedCheck.upright);
-            Debug.Log("You Landed Successfully!");
-            return;
+            if (groundedCheck.onSide)
+            {
+                // landed on side, do not count as success
+                Debug.Log("Landed on Side!");
+            }
+            else
+            {
+                // you win!
+                GameEvents.OnFlipSuccess?.Invoke();
+                OnSuccess(groundedCheck.upright);
+                Debug.Log("You Landed Successfully!");
+            }
+
         }
         // if previously not grounded and still not grounded, do nothing
-        else if (!groundedCheck.isGrounded && groundedCheck.isGrounded == previousGrounded)
+        else if (!isGrounded && isGrounded == previousGrounded)
         {
-            previousGrounded = groundedCheck.isGrounded;
-            return;
+            // do nothing
         }
+
+        previousGrounded = isGrounded;
     }
 
-    public (bool isGrounded, bool upright) isGroundedCheck()
+    public (bool isgrounded, bool upright, bool onSide) isGroundedCheck()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, height + groundBuffer, groundLayer))
         {
-            return (true, true);
+            return (true, true, false);
         }
         else
         {
             if (Physics.Raycast(transform.position, transform.up, out hit, height + groundBuffer, groundLayer))
             {
-                return (true, false);
+                return (true, false, false);
             }
             else
             {
-                return (false, false);
+                //check if grounded on the side
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, width + groundBuffer, groundLayer))
+                {
+                    return (true, false, true);
+                }
+                else
+                {
+                    return (false, false, false);
+                }
             }
         }
     }
@@ -99,10 +116,19 @@ public class SuccessCheck : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        previousGrounded = true;
+        isGrounded = true;
+        timer = landingCooldown;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position - transform.up * (height + groundBuffer));
         Gizmos.DrawLine(transform.position, transform.position + transform.up * (height + groundBuffer));
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position - Vector3.up * (width + groundBuffer));
     }
 }

@@ -25,8 +25,7 @@ public class BottleReset : MonoBehaviour
     IEnumerator ResetCoroutine()
     {
         rb.isKinematic = true;
-        successCheck.previousGrounded = true;
-        successCheck.timer = 1f;
+        successCheck.Reset();
         bottleObject.transform.position = resetPosition.position;
         bottleObject.transform.rotation = resetPosition.rotation;
 

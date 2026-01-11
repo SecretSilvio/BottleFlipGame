@@ -30,13 +30,20 @@ public class ScreenDrawThrow3D : MonoBehaviour
 
     public AudioSource clickSound;
 
+    private SuccessCheck airCheck;
+    private bool inAir;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        airCheck = GetComponent<SuccessCheck>();
     }
 
     void Update()
     {
+        inAir = !airCheck.isGrounded;
+        if (inAir) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             flickStartPos = Input.mousePosition;
