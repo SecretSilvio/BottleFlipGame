@@ -74,11 +74,7 @@ public class SuccessCheck : MonoBehaviour
         else if (isGrounded && isGrounded != previousGrounded)
         {
             timer = landingCooldown;
-            if (landingSound != null)
-            {
-                landingSound.pitch = Random.Range(0.95f, 1.05f);
-                landingSound.Play();
-            }
+
             if (groundedCheck.onSide)
             {
                 // landed on side, do not count as success
@@ -134,6 +130,11 @@ public class SuccessCheck : MonoBehaviour
     public void OnSuccess(bool upright)
     {
         StreakCount += 1;
+        if (landingSound != null)
+        {
+            landingSound.pitch = Random.Range(0.9f, 1.1f);
+            landingSound.Play();
+        }
         StartCoroutine(dpw.StickTheLanding());
         // Additional logic for success can be added here
         if (upright)
