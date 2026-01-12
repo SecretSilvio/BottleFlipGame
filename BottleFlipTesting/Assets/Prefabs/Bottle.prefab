@@ -167,7 +167,7 @@ MonoBehaviour:
   uprightTorqueStrength: 1
   freeFallThreshold: 0
   dragAlignmentExponent: 1.5
-  maxDrag: 4
+  maxDrag: 2
   torqueAlignmentExponent: 1
 --- !u!1 &9106538554158477741
 GameObject:
@@ -272,7 +272,7 @@ MonoBehaviour:
   minFlickSpeed: 300
   minFlickDistance: 60
   maxFlickDistance: 1000
-  maxFlickSpeed: 8000
+  maxFlickSpeed: 6000
   throwSteps: 10
   minXForce: 0
   maxXForce: 4
