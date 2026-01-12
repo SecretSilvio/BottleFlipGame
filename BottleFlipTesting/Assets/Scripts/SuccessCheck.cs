@@ -17,7 +17,8 @@ public class SuccessCheck : MonoBehaviour
     public ParticleSystem uprightStarPS;
     public ParticleSystem upsidedownStarPS;
 
-    public AudioSource landingSound;
+    public AudioSource successSound;
+    public AudioSource failSound;
     private DotProductWater dpw;
     private TrailRenderer trailRenderer;
     public TextMeshProUGUI streakText;
@@ -79,6 +80,11 @@ public class SuccessCheck : MonoBehaviour
             {
                 // landed on side, do not count as success
                 Debug.Log("Landed on Side!");
+                if (failSound != null)
+                {
+                    failSound.pitch = Random.Range(0.95f, 1.05f);
+                    failSound.Play();
+                }
                 StreakCount = 0;
             }
             else
@@ -130,10 +136,10 @@ public class SuccessCheck : MonoBehaviour
     public void OnSuccess(bool upright)
     {
         StreakCount += 1;
-        if (landingSound != null)
+        if (successSound != null)
         {
-            landingSound.pitch = Random.Range(0.9f, 1.1f);
-            landingSound.Play();
+            successSound.pitch = Random.Range(0.9f, 1.1f);
+            successSound.Play();
         }
         StartCoroutine(dpw.StickTheLanding());
         // Additional logic for success can be added here

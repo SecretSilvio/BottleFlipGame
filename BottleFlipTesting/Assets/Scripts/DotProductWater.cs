@@ -64,10 +64,9 @@ public class DotProductWater : MonoBehaviour
     {
         Debug.Log("StickTheLanding called");
         stickTheLandingCalled = true;
-        Vector3 temp = bottleRb.centerOfMass;
         bottleRb.centerOfMass = new Vector3(0f, -0.8f, 0f); // Lower center of mass
         yield return new WaitForSecondsRealtime(1f);
-        bottleRb.centerOfMass = temp;
+        bottleRb.centerOfMass = Vector3.zero;
         stickTheLandingCalled = false;
     }
 }
