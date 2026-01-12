@@ -277,8 +277,8 @@ MonoBehaviour:
   minXForce: 0
   maxXForce: 4
   minYForce: 3
-  maxYForce: 20
-  flatXMult: 1.2
+  maxYForce: 15
+  flatXMult: 1.3
   forwardForce: 2
   minTorque: 0
   maxTorque: 8
@@ -307,6 +307,7 @@ MonoBehaviour:
   uprightStarPS: {fileID: 4621159330826344548}
   upsidedownStarPS: {fileID: 9094699882951204678}
   landingSound: {fileID: 0}
+  streakText: {fileID: 0}
 --- !u!1001 &3664693854474297038
 PrefabInstance:
   m_ObjectHideFlags: 0
