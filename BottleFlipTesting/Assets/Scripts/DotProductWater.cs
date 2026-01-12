@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DotProductWater : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DotProductWater : MonoBehaviour
     public float maxDrag = 4.0f; // Maximum angular drag when upright
     public float torqueAlignmentExponent = 4.0f; // Exponent for torque scaling
 
+    private bool stickTheLandingCalled = false;
     private Vector3 prevVelocity;
 
     void Awake()
@@ -20,6 +22,9 @@ public class DotProductWater : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (stickTheLandingCalled)
+            return;
+
         float dt = Time.fixedDeltaTime;
 
         // Calculate bottle acceleration in world space
@@ -53,5 +58,16 @@ public class DotProductWater : MonoBehaviour
         {
             bottleRb.angularDamping = 0.05f; // Default when not in free fall
         }
+    }
+
+    public IEnumerator StickTheLanding()
+    {
+        Debug.Log("StickTheLanding called");
+        stickTheLandingCalled = true;
+        Vector3 temp = bottleRb.centerOfMass;
+        bottleRb.centerOfMass = new Vector3(0f, -0.8f, 0f); // Lower center of mass
+        yield return new WaitForSecondsRealtime(1f);
+        bottleRb.centerOfMass = temp;
+        stickTheLandingCalled = false;
     }
 }

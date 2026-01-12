@@ -16,8 +16,19 @@ public class SuccessCheck : MonoBehaviour
     public ParticleSystem upsidedownStarPS;
 
     public AudioSource landingSound;
+    private DotProductWater dpw;
+    private TrailRenderer trailRenderer;
 
- 
+    private void Start()
+    {
+        trailRenderer = GetComponentInChildren<TrailRenderer>();
+        if (trailRenderer != null)
+        {
+            trailRenderer.enabled = false;
+        }
+        dpw = GetComponentInChildren<DotProductWater>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -27,9 +38,17 @@ public class SuccessCheck : MonoBehaviour
             timer -= Time.deltaTime;
             return;
         }
+        if (isGrounded)
+        {
+            trailRenderer.enabled = false;
+        }
+        else
+        {
+            trailRenderer.enabled = true;
+        }
 
-        // check if grounded now
-        var groundedCheck = isGroundedCheck();
+            // check if grounded now
+            var groundedCheck = isGroundedCheck();
         isGrounded = groundedCheck.isgrounded;
         // if previously grounded and still grounded, do nothing
         if (isGrounded && isGrounded == previousGrounded)
@@ -106,6 +125,7 @@ public class SuccessCheck : MonoBehaviour
         landingSound.Play();
         }
         StreakCount += 1;
+        StartCoroutine(dpw.StickTheLanding());
         // Additional logic for success can be added here
         if (upright)
         {
