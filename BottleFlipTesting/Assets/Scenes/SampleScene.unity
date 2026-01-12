@@ -1131,10 +1131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 467963225789599166, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
-      propertyPath: maxFlickSpeed
-      value: 6000
-      objectReference: {fileID: 0}
     - target: {fileID: 2502346436797289552, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1174,10 +1170,6 @@ PrefabInstance:
     - target: {fileID: 2502346436797289552, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739021725435215245, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
-      propertyPath: maxDrag
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9106538554158477741, guid: 378a076e81d585640a384ef1ed9073ac, type: 3}
       propertyPath: m_Name
