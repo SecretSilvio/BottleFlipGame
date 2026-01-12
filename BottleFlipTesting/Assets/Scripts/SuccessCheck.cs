@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SuccessCheck : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class SuccessCheck : MonoBehaviour
     public AudioSource landingSound;
     private DotProductWater dpw;
     private TrailRenderer trailRenderer;
+    public TextMeshProUGUI streakText;
 
     private void Start()
     {
@@ -27,11 +30,17 @@ public class SuccessCheck : MonoBehaviour
             trailRenderer.enabled = false;
         }
         dpw = GetComponentInChildren<DotProductWater>();
+        streakText = GameObject.Find("ChainText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (streakText != null)
+        {
+            streakText.text = "Streak: " + StreakCount.ToString();
+        }
+
         // if landing cooldown is active, just count it down and return
         if (timer > 0f)
         {
