@@ -22,6 +22,7 @@ public class SuccessCheck : MonoBehaviour
     private DotProductWater dpw;
     private TrailRenderer trailRenderer;
     public TextMeshProUGUI streakText;
+    public ParticleSystem[] emojiParticles;
 
     private void Start()
     {
@@ -136,6 +137,7 @@ public class SuccessCheck : MonoBehaviour
     public void OnSuccess(bool upright)
     {
         StreakCount += 1;
+        SpawnEmoji();
         if (successSound != null)
         {
             successSound.pitch = Random.Range(0.9f, 1.1f);
@@ -171,6 +173,11 @@ public class SuccessCheck : MonoBehaviour
         previousGrounded = true;
         isGrounded = true;
         timer = landingCooldown;
+    }
+
+    public void SpawnEmoji()
+    {
+        emojiParticles[Random.Range(0, emojiParticles.Length)].Play();
     }
 
     private void OnDrawGizmos()
