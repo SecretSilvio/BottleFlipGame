@@ -80,15 +80,15 @@ Material:
     - _UIMaskSoftnessY: 1
     m_Colors:
     - _BackColor1: {r: 0.81886786, g: 0.81886786, b: 0.81886786, a: 1}
-    - _BackColor2: {r: 0.5169811, g: 0.5169811, b: 0.5169811, a: 1}
-    - _Back_MoveSpeed: {r: 0.14, g: 0.14, b: 0, a: 0}
+    - _BackColor2: {r: 0.7433963, g: 0.7433963, b: 0.7433963, a: 1}
+    - _Back_MoveSpeed: {r: 0.43, g: 0.14, b: 0, a: 0}
     - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
     - _GradientColor1: {r: 0.327602, g: 0.17924517, b: 1, a: 1}
     - _GradientColor2: {r: 1, g: 0.66619277, b: 0.26226407, a: 1}
     - _GradientColor3: {r: 0, g: 0.67636776, b: 1, a: 1}
     - _GradientColor4: {r: 1, g: 0.8584906, b: 0.8584906, a: 1}
     - _MaskColor1: {r: 1, g: 1, b: 1, a: 1}
-    - _MaskColor2: {r: 0.5924529, g: 0.5924529, b: 0.5924529, a: 1}
+    - _MaskColor2: {r: 1, g: 1, b: 1, a: 1}
     - _MaskSpeed: {r: 0.11, g: 0.04, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
